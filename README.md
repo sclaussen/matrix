@@ -1,6 +1,6 @@
-## Videos
+## Process
 
-- [ ] Supplies
+- Supplies
   - Electronic
     - Arduino Mega
     - USB cable
@@ -25,28 +25,40 @@
     - Piers to pull the nails from the shadow box
     - Laser cutter
     - Sand paper
+
+- LED Prep
+  - Cut the LEDs into 16 strips of 16 LEDs/strip
+  - The WS2812 is an RGB LED with a WS2811 control IC built right into the LED
+
+- Shadow box prep
+  - Removed glass
+  - Removed nails holding glass in place
+  - 2 coast of Rust-oleum on each side to frost the glass
+
+- LED Mounts
+  - Process
+    - Gravit Designer
+    - 302mm x 302mm square (11 7/8" x 11 78")
+    - 16 LEDs at 16.5mm/LED for a total of 264mm x 264mm centered (19mm edge)
+    - Exported to SVG, imported into Adobe Illustrator, printed on xyz laser printer
+  - Four layers
+    - Layer 1. LED Mount Panel (8.5mm x 8.5mm holes)
+    - Layers 2-4. Aperature Panel x3 (12.5mm x 12.5mm holes)
+    - How thick?
+    - Why type of wood?
+
+
+
+## Videos
+
+- [ ] Supplies
 - [x] LED prep (note the 2812b controller on each LED)
-      - Cut the LEDs into 16 strips of 16 LEDs/strip
-      - The WS2812 is an RGB LED with a WS2811 control IC built right into the LED
 - [x] Creating the arduino sketch in TinkerCad
 - [x] Arduino wiring to test each LED strip
 - [ ] Integrating the power supply
 - [x] Prepping the shadow box
-      - Removed glass
-      - Removed nails holding glass in place
 - [x] Smoking the shadow box glass (defuse the light)
-      - 2 coast of Rust-oleum on each side to frost the glass
 - [ ] Designing the LED mounts and aperature layers, and laser cutting the layers (special thanks to Al & Angi)
-      - Process
-        - Gravit Designer
-        - 302mm x 302mm square (11 7/8" x 11 78")
-        - 16 LEDs at 16.5mm/LED for a total of 264mm x 264mm centered (19mm edge)
-        - Exported to SVG, imported into Adobe Illustrator, printed on xyz laser printer
-    - Four layers
-      Layer 1. LED Mount Panel (8.5mm x 8.5mm holes)
-      Layers 2-4. Aperature Panel x3 (12.5mm x 12.5mm holes)
-      How thick?
-      Why type of wood?
 - [ ] LED, arduino, and power assembly
 - [ ] Final assembly
 - [ ] Programming
