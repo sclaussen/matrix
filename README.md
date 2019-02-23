@@ -1,30 +1,31 @@
-## Process
+## Supplies
 
-- Supplies
-  - Electronic
-    - Arduino Mega
-    - USB cable
-    - Jumper cables
-    - Breadboard
-    - [470 ohms resistor](https://www.amazon.com/gp/product/B0185FGO1U/ref=ppx_yo_dt_b_asin_title_o09__o00_s00?ie=UTF8&psc=1)
-    - [WS2812 LED strip x2 (240 per role, 60/meter)](https://www.amazon.com/gp/product/B00JYPJAL2/ref=ppx_yo_dt_b_asin_title_o06__o00_s00?ie=UTF8&psc=1)
-    - [WS2812 LED strip connectors](https://www.amazon.com/gp/product/B01NARSHY2/ref=ppx_yo_dt_b_asin_title_o05__o00_s00?ie=UTF8&psc=1)
-    - [5V 10amps 50W Power Supply](https://www.amazon.com/gp/product/B07CMM2BBR/ref=ppx_yo_dt_b_asin_title_o00__o00_s00?ie=UTF8&psc=1)
-    - [1000uF to 10V Capacitor](https://www.amazon.com/gp/product/B07BCK64CQ/ref=ppx_yo_dt_b_asin_title_o09__o00_s00?ie=UTF8&psc=1)
-  - Display
-    - [Michael's Shadow Box](https://www.michaels.com/12x12-studio-decor-top-loading-shadowbox/10202509.html?productsource=PDPZ1)
-    - Foam
-    - Hot Glue Gun & Glue
-    - [Rust-oleum](https://www.amazon.com/gp/product/B004M5B4U4/ref=ppx_yo_dt_b_asin_title_o07__o00_s00?ie=UTF8&psc=1)
-    - Rubber bands
-    - Spacers
-    - 1 layer with 16x16 small squares to mount the LED strips
-    - 3 layers with 16x16 squares to create the aperature between the LEDs and the diffused glass
-  - Other
-    - Scissors/etc to cut the LED strip
-    - Piers to pull the nails from the shadow box
-    - Laser cutter
-    - Sand paper
+- Electronic
+  - Arduino Uno (or Mega)
+  - USB cable
+  - Jumper cables
+  - Breadboard
+  - [470 ohms resistor](https://www.amazon.com/gp/product/B0185FGO1U/ref=ppx_yo_dt_b_asin_title_o09__o00_s00?ie=UTF8&psc=1)
+  - [WS2812 LED strip x2 (250 per role, 60/meter)](https://www.amazon.com/gp/product/B00JYPJAL2/ref=ppx_yo_dt_b_asin_title_o06__o00_s00?ie=UTF8&psc=1)
+  - [WS2812 LED strip connectors](https://www.amazon.com/gp/product/B01NARSHY2/ref=ppx_yo_dt_b_asin_title_o05__o00_s00?ie=UTF8&psc=1)
+  - [5V 10amps 50W Power Supply](https://www.amazon.com/gp/product/B07CMM2BBR/ref=ppx_yo_dt_b_asin_title_o00__o00_s00?ie=UTF8&psc=1)
+  - [1000uF to 10V Capacitor](https://www.amazon.com/gp/product/B07BCK64CQ/ref=ppx_yo_dt_b_asin_title_o09__o00_s00?ie=UTF8&psc=1)
+- Display
+  - [Michael's Shadow Box](https://www.michaels.com/12x12-studio-decor-top-loading-shadowbox/10202509.html?productsource=PDPZ1)
+  - Foam (to secure mounts in the shadow box)
+  - Hot Glue Gun & Glue (to secure foam to the back of the shadow box)
+  - [Rust-oleum](https://www.amazon.com/gp/product/B004M5B4U4/ref=ppx_yo_dt_b_asin_title_o07__o00_s00?ie=UTF8&psc=1)
+  - Spacers
+  - 1 layer with 16x16 small squares to mount the LED strips
+  - 3 layers with 16x16 squares to create the aperature between the LEDs and the diffused glass
+- Other
+  - Scissors (to cut the LED strips)
+  - Piers (to pull the nails from the shadow box)
+  - Laser cutter
+  - Duct Tape (to secure LEDs onto LED mount)
+
+
+## Process
 
 - LED Prep
   - Cut the LEDs into 16 strips of 16 LEDs/strip
