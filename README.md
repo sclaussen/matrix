@@ -15,14 +15,13 @@
   - Foam (to secure mounts in the shadow box)
   - Hot Glue Gun & Glue (to secure foam to the back of the shadow box)
   - [Rust-oleum](https://www.amazon.com/gp/product/B004M5B4U4/ref=ppx_yo_dt_b_asin_title_o07__o00_s00?ie=UTF8&psc=1)
-  - Spacers
   - 1 layer with 16x16 small squares to mount the LED strips
   - 3 layers with 16x16 squares to create the aperature between the LEDs and the diffused glass
 - Other
   - Scissors (to cut the LED strips)
   - Piers (to pull the nails from the shadow box)
   - Laser cutter
-  - Duct Tape (to secure LEDs onto LED mount)
+  - Duct tape (to secure LEDs onto LED mount)
 
 
 ## Process
