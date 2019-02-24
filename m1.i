@@ -5,8 +5,7 @@
 #define DATA_PIN 3
 #define NUM_LEDS 256
 #define DELAY 25
-#define DIM 20
-#define BRIGHT 100
+#define BRIGHTNESS 10
 
 
 CRGB leds[NUM_LEDS];
@@ -130,153 +129,110 @@ const long BombJack02[] PROGMEM = {
 
 void setup() {
     FastLED.addLeds<WS2811, DATA_PIN, GRB>(leds, NUM_LEDS).setCorrection(TypicalLEDStrip);
-    FastLED.setBrightness(DIM);
+    FastLED.setBrightness(BRIGHTNESS);
     Serial.begin(9600);
     randomSeed(analogRead(0));
 }
 
 
 void loop() {
-    for (int algorithm = 1; algorithm <= 18; algorithm++) {
-        switch (algorithm) {
-        case 1:
-            Serial.println("smiley");
-            bright(BRIGHT);
-            smiley(66, 75, 1000);
-            break;
-        case 2:
-            Serial.println("animation");
-            bright(DIM);
-            animation(1000);
-            break;
-        case 3:
-            Serial.println("rgb");
-            bright(DIM);
-            rgbFadeInFadeOut(1000);
-            break;
-        case 4:
-            Serial.println("cylon");
-            bright(BRIGHT);
-            cylonBounce(random(0, 255), random(0, 255), random(0, 255), random(10, 25), 0, 1000);
-            break;
-        case 5:
-            Serial.println("strobe");
-            bright(DIM);
-            strobe(random(0, 255), random(0, 255), random(0, 255), random(10, 15), 50, 1000);
-            break;
-        case 6:
-            Serial.println("wipe random");
-            bright(DIM);
-            colorWipeRandom(0, 1000);
-            break;
-        case 7:
-            Serial.println("twinkle");
-            bright(BRIGHT);
-            twinkleOnRandom(random(75, 100), random(1,5), 0, 1000);
-            break;
-        case 8:
-            Serial.println("arrow chaos");
-            bright(BRIGHT);
-            arrows(random(30, 60), 30, 1000, true);
-            break;
-        case 9:
-            Serial.println("twinkle off");
-            bright(DIM);
-            twinkleAlwaysOnRandom(random(800, 1000), 0, 1000);
-            break;
-        case 10:
-            Serial.println("checkers");
-            bright(DIM);
-            checkers(random(10, 20), 250, 1000);
-            break;
-        case 11:
-            Serial.println("rainbow");
-            bright(DIM);
-            rainbowCycle(10, 1000);
-            break;
-        case 12:
-            Serial.println("pest");
-            bright(DIM);
-            pest(random(400, 500), false, 30, 1000);
-            break;
-        case 13:
-            Serial.println("slug");
-            bright(DIM);
-            slug(random(400, 500), 30, 1000);
-            break;
-        case 14:
-            Serial.println("wipe");
-            bright(BRIGHT);
-            colorWipe(random(0, 255), random(0, 255), random(0, 255), 0, 1000);
-            break;
-        case 15:
-            Serial.println("KITT");
-            bright(BRIGHT);
-            newKITT(random(0, 255), random(0, 255), random(0, 255), random(3, 15), 0, 1000);
-            break;
-        case 16:
-            Serial.println("twinkle on");
-            bright(BRIGHT);
-            twinkleOnRandom(random(8, 12), random(30, 200), 0, 1000);
-            break;
-        case 17:
-            Serial.println("let it rain");
-            bright(BRIGHT);
-            letItRain(40, 1000);
-            break;
-        case 18:
-            Serial.println("arrows");
-            bright(BRIGHT);
-            arrows(30, 20, 1000, false);
-            break;
-        }
+    int algorithm = random(0, 19);
+    algorithm = 18;
+
+    switch (algorithm) {
+    case 1:
+        Serial.println("Algorithm: smiley");
+        smiley(1000);
+        break;
+    case 2:
+        Serial.println("Algorithm: animation");
+        animation(1000);
+        break;
+    case 3:
+        Serial.println("Algorithm: rgbFadeInFadeOut");
+        rgbFadeInFadeOut(1000);
+        break;
+    case 4:
+        Serial.println("Algorithm: cylonBounce");
+        cylonBounce(random(0, 255), random(0, 255), random(0, 255), random(3, 15), 0, 1000);
+        break;
+    case 5:
+        Serial.println("Algorithm: newKITT");
+        newKITT(random(0, 255), random(0, 255), random(0, 255), random(3, 15), 0, 1000);
+        break;
+    case 6:
+        Serial.println("Algorithm: fadeInFadeOut");
+        fadeInFadeOut(random(2, 5), random(0, 255), random(0, 255), random(0, 255), 1000);
+        break;
+    case 7:
+        Serial.println("Algorithm: twinkleOnRandom (quick)");
+        twinkleOnRandom(random(50, 100), random(1,5), 0, 1000);
+        break;
+    case 8:
+        Serial.println("Algorithm: twinkleOnRandom");
+        twinkleOnRandom(random(5, 8), random(30, 200), 0, 1000);
+        break;
+    case 9:
+        Serial.println("Algorithm: twinkleAlwaysOnRandom");
+        twinkleAlwaysOnRandom(random(800, 1000), 0, 1000);
+        break;
+    case 10:
+        Serial.println("Algorithm: twinkleOff");
+        twinkleOff(random(3, 6), random(0, 255), random(0, 255), random(0, 255), random(50, 150), 10, 1000);
+        break;
+    case 11:
+        Serial.println("Algorithm: rainbowCycle");
+        rainbowCycle(10, 1000);
+        break;
+    case 12:
+        Serial.println("Algorithm: theaterChaseRainbow");
+        theaterChaseRainbow(50, 1000);
+        break;
+    case 13:
+        Serial.println("Algorithm: colorWipe");
+        colorWipe(random(0, 255), random(0, 255), random(0, 255), 0, 1000);
+        break;
+    case 14:
+        Serial.println("Algorithm: colorWipeRandom");
+        colorWipeRandom(0, 1000);
+        break;
+    case 15:
+        Serial.println("Algorithm: letItRain");
+        letItRain(30, 1000);
+        break;
+    case 16:
+        Serial.println("Algorithm: arrows");
+        arrows(30, 1000);
+        break;
+    case 17:
+        Serial.println("Algorithm: checkers");
+        checkers(10, 250, 1000);
+        break;
+    case 18:
+        Serial.println("Algorithm: pest");
+        pest(random(800, 1000), true, 30, 1000);
+        break;
+    case 19:
+        Serial.println("Algorithm: strobe");
+        strobe(random(0, 255), random(0, 255), random(0, 255), random(7, 12), 60, 1000);
+        break;
+    /* case 19: */
+    /*     Serial.println("Algorithm: snake"); */
+    /*     pest(random(800, 1000), false, 50, 1000); */
+    /*     break; */
+    /* case 20: */
+    /*     Serial.println("Algorithm: happyface"); */
+    /*     happyFace(30, 1000); */
+    /*     break; */
     }
-}
 
-
-void smiley(int number, int speedDelay, int returnDelay) {
-    setAllOff();
-    for (int i = 0; i < number; i++) {
-        eye(6, 5, 100, 120, 130);
-        eye(10, 5, 100, 120, 130);
-        nose(8, 8, 125, 125, 125);
-        mouth(3, 10, 255, 255, 255);
-        show();
-        delay(speedDelay);
-    }
-    delay(returnDelay);
-}
-
-
-void eye(int x, int y, int red, int green, int blue) {
-    setRandom(getLedNumber(x, y));
-    setRandom(getLedNumber(x + 1, y + 1));
-    setRandom(getLedNumber(x + 1, y));
-    setRandom(getLedNumber(x, y + 1));
-}
-
-
-void nose(int x, int y, int red, int green, int blue) {
-    setRandom(getLedNumber(x, y));
-    setRandom(getLedNumber(x + 1, y + 1));
-    setRandom(getLedNumber(x + 1, y));
-    setRandom(getLedNumber(x, y + 1));
-    setRandom(getLedNumber(x - 1, y + 1));
-    setRandom(getLedNumber(x + 2, y + 1));
-}
-
-
-void mouth(int x, int y, int red, int green, int blue) {
-    setRandom(getLedNumber(4, 10));
-    setRandom(getLedNumber(5, 11));
-    setRandom(getLedNumber(6, 12));
-    setRandom(getLedNumber(7, 13));
-    setRandom(getLedNumber(8, 13));
-    setRandom(getLedNumber(9, 13));
-    setRandom(getLedNumber(10, 13));
-    setRandom(getLedNumber(11, 12));
-    setRandom(getLedNumber(12, 11));
-    setRandom(getLedNumber(13, 10));
+    /* theaterChase(255, 0, 0, 20); */
+    // fire(55, 120, 15);
+    /* bouncingBalls(255, 0, 0, 3); */
+    // int colors[3][3] = { { 255, 0,0 }, { 255, 255, 255 }, { 0, 0, 255 } };
+    /* runningLights(255, 0, 0, 100); */
+    // bouncingColoredBalls(3, colors);
+    /* meteorRain(255, 255, 255, 10, 64, true, 30); */
 }
 
 
@@ -323,27 +279,12 @@ void checkers(int number, int speedDelay, int returnDelay) {
 }
 
 
-void slug(int number, int speedDelay, int returnDelay) {
-    pest(number, true, speedDelay, returnDelay);
-}
-
-
-void pest(int number, boolean trail, int speedDelay, int returnDelay) {
-    setAllOff();
-    int oldX = -1;
-    int oldY = -1;
+void pest(int number, boolean pest, int speedDelay, int returnDelay) {
     int x = random(0, 17);
     int y = random(0, 17);
 
     for (int i = 0; i < number; i++) {
-
         setRandom(getLedNumber(x, y));
-        if (oldX > -1 && !trail) {
-            setOff(getLedNumber(oldX, oldY));
-        }
-        oldX = x;
-        oldY = y;
-
         show();
 
         boolean directionFound = false;
@@ -388,8 +329,12 @@ void pest(int number, boolean trail, int speedDelay, int returnDelay) {
 }
 
 
+void happyFace(int drops, int returnDelay) {
+    delay(returnDelay);
+}
+
+
 void letItRain(int drops, int returnDelay) {
-    setAllOff();
 
     for (int i = 0; i < drops; i++) {
 
@@ -416,108 +361,39 @@ void letItRain(int drops, int returnDelay) {
 }
 
 
-void arrows(int shots, int speedDelay, int returnDelay, int allDirections) {
-    setAllOff();
+void arrows(int shots, int returnDelay) {
 
     for (int i = 0; i < shots; i++) {
 
-        int x;
-        int y;
-        int deltaX;
-        int deltaY;
-        int direction = 2; // east
-        if (allDirections) {
-            direction = random(0, 4);
-        }
-        switch (direction) {
-        case 0: // north
-            x = random(3, 14);
-            y = 16;
-            deltaX = 0;
-            deltaY = -1;
-            break;
-        case 1: // south
-            x = random(3, 14);
-            y = 1;
-            deltaX = 0;
-            deltaY = 1;
-            break;
-        case 2: // east
-            x = 1;
-            y = random(3, 14);
-            deltaX = 1;
-            deltaY = 0;
-            break;
-        case 3: // west
-            x = 16;
-            y = random(3, 14);
-            deltaX = -1;
-            deltaY = 0;
-            break;
-        }
-
+        int y = random(3, 14);
         int speedDelay = random(0, 20);
-        int length = random(8, 13);
+        int length = random(9, 13);
 
-        if (deltaX != 0) {
-            for (int move = 1; move <= 16; move++) {
+        for (int x = 1; x <= 16; x++) {
 
-                if (move > length) {
-                    setOff(getLedNumber(x + (deltaX * length * -1), y));
-                }
-
-                setRandom(getLedNumber(x, y));
-
-                if (move > 5) {
-                    setOff(getLedNumber(x + (deltaX * -1) + (deltaX * -1), y - 1));
-                    setOff(getLedNumber(x + (deltaX * -1) + (deltaX * -2), y - 2));
-                    setOff(getLedNumber(x + (deltaX * -1) + (deltaX * -1), y + 1));
-                    setOff(getLedNumber(x + (deltaX * -1) + (deltaX * -2), y + 2));
-                }
-
-                if (move > 4) {
-                    setRandom(getLedNumber(x + (deltaX * -1), y - 1));
-                    setRandom(getLedNumber(x + (deltaX * -2), y - 2));
-                    setRandom(getLedNumber(x + (deltaX * -1), y + 1));
-                    setRandom(getLedNumber(x + (deltaX * -2), y + 2));
-                }
-
-                x+= deltaX;
-                FastLED.show();
-                delay(speedDelay);
+            if (x > length) {
+                setOff(getLedNumber(x - length, y));
             }
-        }
 
-        if (deltaY != 0) {
-            for (int move = 1; move <= 16; move++) {
+            set(getLedNumber(x, y), random(0, 255), random(0, 255), random(0, 255));
 
-                if (move > length) {
-                    setOff(getLedNumber(x, y + (deltaY * length * -1)));
-                }
+            if (x > 4) {
+                setOff(getLedNumber(x - 2, y - 1));
+                setOff(getLedNumber(x - 3, y - 2));
+                setOff(getLedNumber(x - 2, y + 1));
+                setOff(getLedNumber(x - 3, y + 2));
 
-                setRandom(getLedNumber(x, y));
-
-                if (move > 5) {
-                    setOff(getLedNumber(x - 1, y + (deltaY * -1) + (deltaY * -1)));
-                    setOff(getLedNumber(x - 2, y + (deltaY * -1) + (deltaY * -2)));
-                    setOff(getLedNumber(x + 1, y + (deltaY * -1) + (deltaY * -1)));
-                    setOff(getLedNumber(x + 2, y + (deltaY * -1) + (deltaY * -2)));
-                }
-
-                if (move > 4) {
-                    setRandom(getLedNumber(x - 1, y + (deltaY * -1)));
-                    setRandom(getLedNumber(x - 2, y + (deltaY * -2)));
-                    setRandom(getLedNumber(x + 1, y + (deltaY * -1)));
-                    setRandom(getLedNumber(x + 2, y + (deltaY * -2)));
-                }
-
-                y+= deltaY;
-                FastLED.show();
-                delay(speedDelay);
+                set(getLedNumber(x - 1, y - 1), random(0, 255), random(0, 255), random(0, 255));
+                set(getLedNumber(x - 2, y - 2), random(0, 255), random(0, 255), random(0, 255));
+                set(getLedNumber(x - 1, y + 1), random(0, 255), random(0, 255), random(0, 255));
+                set(getLedNumber(x - 2, y + 2), random(0, 255), random(0, 255), random(0, 255));
             }
-        }
 
+            FastLED.show();
+            delay(speedDelay);
+        }
         setAllOff();
+        Serial.println(' ');
     }
 
     delay(returnDelay);
@@ -607,7 +483,7 @@ void fadeInFadeOut(int number, int red, int green, int blue, int returnDelay) {
     float r, g, b;
 
     for (int i = 0; i < number; i++) {
-        for (int k = 0; k < 256; k = k + 3) {
+        for (int k = 0; k < 256; k = k + 4) {
             r = (k / 256.0) * red;
             g = (k / 256.0) * green;
             b = (k / 256.0) * blue;
@@ -615,7 +491,7 @@ void fadeInFadeOut(int number, int red, int green, int blue, int returnDelay) {
             show();
         }
 
-        for (int k = 255; k >= 0; k = k - 3) {
+        for (int k = 255; k >= 0; k = k - 4) {
             r = (k / 256.0) * red;
             g = (k / 256.0) * green;
             b = (k / 256.0) * blue;
@@ -635,10 +511,10 @@ void fadeInFadeOut(int number, int red, int green, int blue, int returnDelay) {
 // - flashDelay: ms delay between flashes
 // - returnDelay: ms delay after all flashes
 void strobe(int red, int green, int blue, int numberOfFlashes, int speedDelay, int returnDelay) {
-    setAllOff();
 
     for (int flash = 0; flash < numberOfFlashes; flash++) {
 
+        /* setAll(red, green, blue); */
         setAllRandom();
         show();
 
@@ -659,7 +535,6 @@ void strobe(int red, int green, int blue, int numberOfFlashes, int speedDelay, i
 // from the first LED on the strip to the last LED on the strip and
 // then moves from the last LED on the strip back to the first one.
 void cylonBounce(int red, int green, int blue, int cylonLength, int speedDelay, int returnDelay) {
-    setAllOff();
 
     for (int ledNumber = 0; ledNumber < NUM_LEDS - cylonLength - 2; ledNumber++) {
         setAllOff();
@@ -680,7 +555,6 @@ void cylonBounce(int red, int green, int blue, int cylonLength, int speedDelay, 
 
 
 void newKITT(int red, int green, int blue, int cylonLength, int speedDelay, int returnDelay) {
-    setAllOff();
     /* rightToLeft(red, green, blue, cylonLength, speedDelay, returnDelay); */
     /* leftToRight(red, green, blue, cylonLength, speedDelay, returnDelay); */
     outsideToCenter(red, green, blue, cylonLength, speedDelay, returnDelay);
@@ -735,8 +609,8 @@ void rightToLeft(int red, int green, int blue, int cylonLength, int speedDelay, 
 void cylon(int ledNumber, int red, int green, int blue, int cylonLength) {
     dim(ledNumber, red, green, blue);
     for (int offset = 1; offset <= cylonLength; offset++) {
-        setRandom(ledNumber + offset);
         /* set(ledNumber + offset, red, green, blue); */
+        set(ledNumber + offset, red, green, blue);
     }
     dim(ledNumber + cylonLength + 1, red, green, blue);
     show();
@@ -792,6 +666,7 @@ void twinkleOnRandom(int number, int count, int speedDelay, int returnDelay) {
 
 
 void twinkleAlwaysOnRandom(int number, int speedDelay, int returnDelay) {
+    setAllOff();
     setAllRandom();
 
     for (int i = 0; i < number; i++) {
@@ -806,7 +681,6 @@ void twinkleAlwaysOnRandom(int number, int speedDelay, int returnDelay) {
 
 
 void twinkleOff(int number, int red, int blue, int green, int count, int speedDelay, int returnDelay) {
-    setAllOff();
 
     for (int i = 0; i < number; i++) {
         setAll(red, blue, green);
@@ -1238,9 +1112,4 @@ void setOff(int ledNumber) {
 
 void show() {
     FastLED.show();
-}
-
-
-void bright(int value) {
-    FastLED.setBrightness(value);
 }
