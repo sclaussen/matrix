@@ -65,4 +65,4 @@ We would like to thank the following individuals:
 
 - [Brainy Bits](https://www.brainy-bits.com/arduino-16x16-matrix-frame) for the project inspiration
 - Al Davies & Angi Chau from the Nueva I-Lab for their help laser printing the panel designs
-- Daniel Garcia and Mark Kriegsman for the work develping the [LED library](https://github.com/FastLED/FastLED)
+- Daniel Garcia and Mark Kriegsman for the work develping the [FastLED library](https://github.com/FastLED/FastLED)
