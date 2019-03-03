@@ -49,22 +49,6 @@
 
 
 
-## Videos
-
-- [ ] Supplies
-- [x] LED prep (note the 2812b controller on each LED)
-- [x] Creating the arduino sketch in TinkerCad
-- [x] Arduino wiring to test each LED strip
-- [ ] Integrating the power supply
-- [x] Prepping the shadow box
-- [x] Smoking the shadow box glass (defuse the light)
-- [ ] Designing the LED mounts and aperature layers, and laser cutting the layers (special thanks to Al & Angi)
-- [ ] LED, arduino, and power assembly
-- [ ] Final assembly
-- [ ] Programming
-
-
-
 ## Print
 
 - Tinkercad diagram
@@ -72,3 +56,13 @@
 - Photos of laser cut layers
 - Final inside assembly
 - Code
+
+
+
+## Thank You
+
+We would like to thank the following individuals:
+
+- [Brainy Bits](https://www.brainy-bits.com/arduino-16x16-matrix-frame) for the project inspiration
+- Al Davies & Angi Chau from the Nueva I-Lab for their help laser printing the panel designs
+- Daniel Garcia and Mark Kriegsman for the work develping the [LED library](https://github.com/FastLED/FastLED)
