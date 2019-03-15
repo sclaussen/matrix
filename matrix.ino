@@ -1247,25 +1247,23 @@ void bright(int value) {
 
 
 void nuevaSteamDay() {
-    for (int i = 0; i < 50; i++) {
-        n(); delay(400);
-        u(); delay(400);
-        e(); delay(400);
-        v(); delay(400);
-        a(); delay(400);
-        setAllOff(); delay(400);
-        s(); delay(400);
-        t(); delay(400);
-        e(); delay(400);
-        a(); delay(400);
-        m(); delay(400);
-        setAllOff(); delay(400);
-        d(); delay(400);
-        a(); delay(400);
-        y(); delay(400);
-        setAllOff(); delay(400);
-        smiley(10, 75, 1000);
-    }
+    n(); delay(400);
+    u(); delay(400);
+    e(); delay(400);
+    v(); delay(400);
+    a(); delay(400);
+    setAllOff(); delay(400);
+    s(); delay(400);
+    t(); delay(400);
+    e(); delay(400);
+    a(); delay(400);
+    m(); delay(400);
+    setAllOff(); delay(400);
+    d(); delay(400);
+    a(); delay(400);
+    y(); delay(400);
+    setAllOff(); delay(400);
+    smiley(10, 75, 1000);
 }
 
 
