@@ -137,8 +137,14 @@ void setup() {
 
 
 void loop() {
-    for (int algorithm = 1; algorithm <= 18; algorithm++) {
+    for (int algorithm = 0; algorithm <= 18; algorithm++) {
+        algorithm = 0;
         switch (algorithm) {
+        case 0:
+            Serial.println("nuevasteamfair");
+            bright(BRIGHT);
+            nuevaSteamDay();
+            break;
         case 1:
             Serial.println("smiley");
             bright(BRIGHT);
@@ -1243,4 +1249,272 @@ void show() {
 
 void bright(int value) {
     FastLED.setBrightness(value);
+}
+
+
+
+void nuevaSteamDay() {
+    for (int i = 0; i < 50; i++) {
+        n(); delay(400);
+        u(); delay(400);
+        e(); delay(400);
+        v(); delay(400);
+        a(); delay(400);
+        setAllOff(); delay(400);
+        s(); delay(400);
+        t(); delay(400);
+        e(); delay(400);
+        a(); delay(400);
+        m(); delay(400);
+        setAllOff(); delay(400);
+        d(); delay(400);
+        a(); delay(400);
+        y(); delay(400);
+        setAllOff(); delay(400);
+        smiley(10, 75, 1000);
+    }
+}
+
+
+void n() {
+    setAllOff();
+    for (int y = 2; y < 15; y++) {
+        setRandom(getLedNumber(2, y));
+        show();
+    }
+
+    for (int xAndY = 3; xAndY < 15; xAndY++) {
+        setRandom(getLedNumber(xAndY, xAndY));
+        show();
+    }
+
+    for (int y = 2; y < 15; y++) {
+        setRandom(getLedNumber(14, y));
+        show();
+    }
+}
+
+
+void u() {
+    setAllOff();
+    for (int y = 2; y < 15; y++) {
+        setRandom(getLedNumber(2, y));
+        show();
+    }
+
+    for (int x = 3; x < 15; x++) {
+        setRandom(getLedNumber(x, 14));
+        show();
+    }
+
+    for (int y = 2; y < 15; y++) {
+        setRandom(getLedNumber(14, y));
+        show();
+    }
+}
+
+
+void e() {
+    setAllOff();
+    for (int y = 2; y < 15; y++) {
+        setRandom(getLedNumber(2, y));
+        show();
+    }
+
+    for (int x = 2; x < 15; x++) {
+        setRandom(getLedNumber(x, 2));
+        show();
+    }
+
+    for (int x = 2; x < 10; x++) {
+        setRandom(getLedNumber(x, 8));
+        show();
+    }
+
+    for (int x = 2; x < 15; x++) {
+        setRandom(getLedNumber(x, 14));
+        show();
+    }
+}
+
+
+void v() {
+    setAllOff();
+
+
+    int y = 2;
+    for (int x = 2; x < 8; x++) {
+        setRandom(getLedNumber(x, y));
+        y++;
+        setRandom(getLedNumber(x, y));
+        y++;
+        show();
+    }
+
+    y = 15;
+    for (int x = 8; x < 15; x++) {
+        setRandom(getLedNumber(x, y));
+        y--;
+        setRandom(getLedNumber(x, y));
+        y--;
+        show();
+    }
+}
+
+
+void a() {
+    setAllOff();
+    int x = 2;
+
+
+    int y = 2;
+    for (int x = 8; x > 1; x--) {
+        setRandom(getLedNumber(x, y));
+        y++;
+        setRandom(getLedNumber(x, y));
+        y++;
+        show();
+    }
+
+    for (int x = 5; x < 13; x++) {
+        setRandom(getLedNumber(x, 10));
+        show();
+    }
+
+    y = 2;
+    for (int x = 8; x < 15; x++) {
+        setRandom(getLedNumber(x, y));
+        y++;
+        setRandom(getLedNumber(x, y));
+        y++;
+        show();
+    }
+}
+
+
+void s() {
+    setAllOff();
+    for (int x = 2; x < 15; x++) {
+        setRandom(getLedNumber(x, 2));
+        show();
+    }
+
+    for (int y = 2; y < 8; y++) {
+        setRandom(getLedNumber(2, y));
+        show();
+    }
+
+    for (int x = 2; x < 15; x++) {
+        setRandom(getLedNumber(x, 8));
+        show();
+    }
+
+    for (int y = 8; y < 15; y++) {
+        setRandom(getLedNumber(14, y));
+        show();
+    }
+
+    for (int x = 2; x < 15; x++) {
+        setRandom(getLedNumber(x, 14));
+        show();
+    }
+}
+
+
+void t() {
+    setAllOff();
+    for (int x = 2; x < 15; x++) {
+        setRandom(getLedNumber(x, 2));
+        show();
+    }
+
+    for (int y = 2; y < 15; y++) {
+        setRandom(getLedNumber(8, y));
+        show();
+    }
+}
+
+
+void m() {
+    setAllOff();
+
+    for (int y = 2; y < 16; y++) {
+        setRandom(getLedNumber(2, y));
+        show();
+    }
+
+    int y = 2;
+    for (int x = 2; x < 8; x++) {
+        setRandom(getLedNumber(x, y));
+        y++;
+        setRandom(getLedNumber(x, y));
+        y++;
+        show();
+    }
+
+    y = 15;
+    for (int x = 8; x < 15; x++) {
+        setRandom(getLedNumber(x, y));
+        y--;
+        setRandom(getLedNumber(x, y));
+        y--;
+        show();
+    }
+
+    for (int y = 2; y < 16; y++) {
+        setRandom(getLedNumber(14, y));
+        show();
+    }
+}
+
+
+void d() {
+    setAllOff();
+
+    // straight down left side
+    for (int y = 2; y < 15; y++) {
+        setRandom(getLedNumber(4, y));
+        show();
+    }
+
+    // top
+    for (int x = 2; x < 14; x++) {
+        setRandom(getLedNumber(x, 2));
+        show();
+    }
+
+    // right side down
+    for (int y = 3; y < 14; y++) {
+        setRandom(getLedNumber(14, y));
+        show();
+    }
+
+    for (int x = 2; x < 14; x++) {
+        setRandom(getLedNumber(x, 14));
+        show();
+    }
+}
+
+
+void y() {
+    setAllOff();
+
+    int y = 2;
+    for (int x = 2; x < 8; x++) {
+        setRandom(getLedNumber(x, y));
+        y++;
+        show();
+    }
+
+    y = 8;
+    for (int x = 8; x < 15; x++) {
+        setRandom(getLedNumber(x, y));
+        y--;
+        show();
+    }
+
+    for (int y = 8; y < 16; y++) {
+        setRandom(getLedNumber(8, y));
+        show();
+    }
 }
