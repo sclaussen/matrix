@@ -137,18 +137,12 @@ void setup() {
 
 
 void loop() {
-    for (int algorithm = 0; algorithm <= 18; algorithm++) {
-        algorithm = 0;
+    for (int algorithm = 1; algorithm <= 18; algorithm++) {
         switch (algorithm) {
-        case 0:
+        case 1:
             Serial.println("nuevasteamfair");
             bright(BRIGHT);
             nuevaSteamDay();
-            break;
-        case 1:
-            Serial.println("smiley");
-            bright(BRIGHT);
-            smiley(66, 75, 1000);
             break;
         case 2:
             Serial.println("animation");
@@ -1250,7 +1244,6 @@ void show() {
 void bright(int value) {
     FastLED.setBrightness(value);
 }
-
 
 
 void nuevaSteamDay() {
